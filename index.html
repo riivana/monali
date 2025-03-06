@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Monali!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&family=Dancing+Script:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #fff8e1, #fce4ec); /* Warm to pastel pink gradient */
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+        .collage {
+            position: relative;
+            width: 1000px;
+            height: 800px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 20px;
+        }
+        .photo {
+            position: absolute;
+            border: 8px solid;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: rotate(var(--rotate));
+            transition: transform 0.3s ease;
+        }
+        .photo:hover {
+            transform: rotate(var(--rotate)) scale(1.05);
+        }
+        #photo1 {
+            width: 250px;
+            top: 50px;
+            left: 50px;
+            --rotate: -10deg;
+            border-color: #ff6f00;
+        }
+        #photo2 {
+            width: 300px;
+            top: 100px;
+            right: 50px;
+            --rotate: 8deg;
+            border-color: #ff4081;
+        }
+        #photo3 {
+            width: 220px;
+            bottom: 50px;
+            left: 150px;
+            --rotate: -5deg;
+            border-color: #81d4fa;
+        }
+        #photo4 {
+            width: 280px;
+            bottom: 100px;
+            right: 100px;
+            --rotate: 12deg;
+            border-color: #b388ff;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Dancing Script', cursive;
+            font-size: 80px;
+            color: #e91e63;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 10;
+        }
+        .title span {
+            display: block;
+            font-size: 100px;
+            color: #d81b60;
+        }
+        .sister-moon {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 50px;
+            color: #fff;
+            background: #ff80ab;
+            padding: 15px 25px;
+            border-radius: 30px;
+            transform: rotate(5deg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: rotate(5deg) translateY(0); }
+            50% { transform: rotate(5deg) translateY(-10px); }
+        }
+        .balloons {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            border-radius: 50% 50% 40% 40%;
+            background: var(--color);
+            animation: float 4s ease-in-out infinite;
+        }
+        .balloon-string {
+            position: absolute;
+            width: 2px;
+            height: 40px;
+            background: var(--string-color);
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .cake {
+            position: absolute;
+            top: 350px;
+            left: 440px;
+            width: 120px;
+            height: 60px;
+            background: #ffccbc;
+            border-radius: 10px;
+            z-index: 5;
+        }
+        .cake-layer1 {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 160px;
+            height: 20px;
+            background: #ffab91;
+            border-radius: 10px;
+        }
+        .cake-layer2 {
+            position: absolute;
+            top: -40px;
+            left: -10px;
+            width: 140px;
+            height: 20px;
+            background: #ff8a65;
+            border-radius: 10px;
+        }
+        .candle {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            width: 4px;
+            height: 40px;
+            background: #e64a19;
+        }
+        .flame {
+            position: absolute;
+            top: -90px;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ffeb3b, #ffd54f);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: flicker 0.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1); }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--color);
+            border-radius: 50%;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(900px); opacity: 0; }
+        }
+        audio {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+    <div class="collage">
+        <!-- Photos -->
+        <img src="http://raw.githubusercontent.com/riivana/monali_bday/refs/heads/main/monali_1.jpeg" class="photo" id="photo1">
+        <img src="http://raw.githubusercontent.com/riivana/monali_bday/refs/heads/main/monali_2.jpeg" class="photo" id="photo2">
+        <img src="http://raw.githubusercontent.com/riivana/monali_bday/refs/heads/main/monali_3.jpeg" class="photo" id="photo3">
+        <img src="http://raw.githubusercontent.com/riivana/monali_bday/refs/heads/main/monali_4.jpeg" class="photo" id="photo4">
+
+        <!-- Title -->
+        <div class="title">
+            Happy Birthday
+            <span>Monali!</span>
+        </div>
+
+        <!-- Sister Moon -->
+        <div class="sister-moon">Sister Moon 🌙</div>
+
+        <!-- Balloons with Animation -->
+        <div class="balloons" style="top: 20px; left: 20px; --color: #ff80ab;">
+            <div class="balloon-string" style="--string-color: #d81b60;"></div>
+        </div>
+        <div class="balloons" style="top: 50px; right: 20px; --color: #80d8ff; animation-delay: 1s;">
+            <div class="balloon-string" style="--string-color: #0091ea;"></div>
+        </div>
+        <div class="balloons" style="bottom: 20px; left: 50px; --color: #b388ff; animation-delay: 0.5s;">
+            <div class="balloon-string" style="--string-color: #7c4dff;"></div>
+        </div>
+        <div class="balloons" style="bottom: 50px; right: 50px; --color: #a7ffeb; animation-delay: 1.5s;">
+            <div class="balloon-string" style="--string-color: #00bfa5;"></div>
+        </div>
+
+        <!-- Birthday Cake -->
+        <div class="cake">
+            <div class="cake-layer1"></div>
+            <div class="cake-layer2"></div>
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+        </div>
+
+        <!-- Falling Confetti -->
+        <div class="confetti" style="left: 100px; --color: #ff8a80; animation-delay: 0s;"></div>
+        <div class="confetti" style="left: 300px; --color: #82b1ff; animation-delay: 1s;"></div>
+        <div class="confetti" style="left: 500px; --color: #b388ff; animation-delay: 2s;"></div>
+        <div class="confetti" style="left: 700px; --color: #ea80fc; animation-delay: 3s;"></div>
+        <div class="confetti" style="left: 900px; --color: #ff80ab; animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Background Music (BGM) with Autoplay -->
+    <audio autoplay loop controls>
+        <source src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Fallback Note -->
+    <div style="position: fixed; bottom: 50px; left: 10px; font-family: 'Poppins', sans-serif; color: #333;">
+        If the music doesn’t play, click the play button, Moon! 🎶
+    </div>
+</body>
+</html>
